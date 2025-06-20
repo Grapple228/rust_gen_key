@@ -1,0 +1,27 @@
+[package]
+name = "gen-key"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Small CLI tool for generating RSA and HMAC keys"
+authors = ["grapple228 <greenapple228882@yandex.ru>"]
+readme = "readme.md"
+repository = "https://github.com/grapple228/rust_gen_key.git"
+
+[lints.rust]
+unsafe_code = "forbid"
+# unused = { level = "allow", priority = -1 } # For exploratory dev.
+
+[dependencies]
+#Other
+grapple_utils = { version = "0.1.0", features = ["b64"] }
+rand = "0.8"
+rsa = "0.9.8"
+clap = {version = "4.5.40", features = ["derive","usage"]}
+derive_more = {version = "1", features = ["from"] }
+
+
+[dev-dependencies]
+predicates = "3.1.3"
+assert_cmd = "2.0.17"
+tempfile = "3.20.0"
