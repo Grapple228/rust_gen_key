@@ -1,5 +1,13 @@
 # Changelog for gen-key
 
+## [0.2.0] - 21 June 2025
+
+- Changed `.pem` and `.der` to save `private` keys in [**PKCS#8**](https://datatracker.ietf.org/doc/html/rfc5208) format and public in [**X.509 (SPKI)**](https://tools.ietf.org/html/rfc5280#section-4.1.2.7) format.
+- Internal refactoring to deduplicate file output and key encoding logic.
+- Added `--prefix` parameter to set output key names
+- Documentation fixes.
+- Added new tests.
+
 ## [0.1.0] - 21 June 2025
 
 ### Added

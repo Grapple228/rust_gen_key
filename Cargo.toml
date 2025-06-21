@@ -1,6 +1,6 @@
 [package]
 name = "gen-key"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 license = "MIT"
 description = "Small CLI tool for generating RSA and HMAC keys"
@@ -14,9 +14,9 @@ unsafe_code = "forbid"
 
 [dependencies]
 #Other
-grapple_utils = { version = "0.1.0", features = ["b64"] }
+grapple_utils = { version = "0.1.0", default-features = false, features = ["b64"] }
 rand = "0.8"
-rsa = "0.9.8"
+rsa = {version = "0.9.8", features = ["sha2"]}
 clap = {version = "4.5.40", features = ["derive","usage"]}
 derive_more = {version = "1", features = ["from"] }
 
