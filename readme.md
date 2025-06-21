@@ -2,6 +2,13 @@
 
 This is a simple command-line tool for generating RSA and HMAC keys. The generated keys can be output to the console or saved to files in a specified directory.
 
+## Important
+
+> ⚠️ **Security Notice:**  
+> This tool uses the `rsa` crate, which is affected by [RUSTSEC-2023-0071](https://rustsec.org/advisories/RUSTSEC-2023-0071).  
+> **Do not use this tool for generating production or long-term RSA keys until the issue is resolved.**  
+> For production, use OpenSSL or another well-audited cryptography library.
+
 ## Features
 
 - Generate RSA key pairs (private and public keys).

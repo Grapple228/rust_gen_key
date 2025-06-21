@@ -21,7 +21,12 @@ const RSA_DEFAULT_KEY_SIZE: usize = 2048;
     author,
     version,
     about = "Generate an RSA or HMAC key and output to files (if --out-dir is set) and/or stdout.",
-    after_help = "EXAMPLES:\n\
+    after_help = "IMPORTANT:\n\
+    > ⚠️ **Security Notice:**  
+    > This tool uses the `rsa` crate, which is affected by [RUSTSEC-2023-0071](https://rustsec.org/advisories/RUSTSEC-2023-0071).  
+    > **Do not use this tool for generating production or long-term RSA keys until the issue is resolved.**  
+    > For production, use OpenSSL or another well-audited cryptography library.\n\
+    \nEXAMPLES:\
     \n  Generate a 2048-bit RSA key pair and print to stdout:\n    gen-key --stdout\n\
     \n  Generate a 4096-bit RSA key pair, print to stdout, and save to ./mykeys/:\n    gen-key --alg rsa --key-size 4096 --out-dir ./mykeys --stdout\n\
     \n  Generate a 256-bit HMAC key and print as base64 to stdout:\n    gen-key --alg hmac --stdout\n\
